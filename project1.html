@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<meta name="keyword" content ="javascript,calculator">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body{
+			background-color:#091921;
+		}
+		.box{
+			background-color:slategray;
+			height:400px;
+			width:300px;
+			border-radius:10px;
+			position:relative;
+			top:80px;
+			left:40%;
+
+		}
+		.display{
+			height:60px;
+			width:280px;
+			position:relative;
+			top:10px;
+			left:10px;
+		}
+		.display input{
+			position:relative;
+			margin-right: 10px;
+			margin-top: 10px;
+			height:35px;
+			width:240px;
+			background-color: peru;
+			font-size: 21px;
+			text-align: right;
+			float:right;
+			color:black;
+
+		}
+		.clear{
+			position:relative;
+			width:100px;
+			height:40px;
+			background-color:palevioletred;
+			font-size: 21px;
+			margin-left:5px;
+		}
+		.clear:active{
+			border-top:pink 2px solid;
+			border-bottom:2px red solid;
+		}
+		.clear:hover:not(.active){
+			background-color: pink;
+			color:white;
+		}
+		.operator{
+			position:relative;
+			width:40px;
+			height:40px;
+			font-size: 21px;
+			background-color: darkgrey;
+			color:white;
+		}
+		.operator:active{
+			border-top:pink 2px solid;
+			border-bottom:2px gray solid;
+		}
+		.operator:hover:not(.active){
+			background-color: grey;
+			color:black;
+		}
+		.number{
+			position:relative;
+			width:60px;
+			height:60px;
+			font-size: 21px;
+			background-color: darkgrey;
+			color:white;
+			margin-left: 5px;
+
+
+		}
+		.number:active{
+			border-top:pink 2px solid;
+			border-bottom:2px gray solid;
+		}
+		.number:hover:not(.active){
+			background-color: grey;
+			color:black;
+		}
+		.decimal{
+			position:relative;
+			width:50px;
+			height:60px;
+			font-size: 21px;
+			background-color: darkgrey;
+			color:white;
+			margin-left: 5px;
+			margin-right: 10px;
+
+
+		}
+		.decimal:active{
+			border-top:pink 2px solid;
+			border-bottom:2px gray solid;
+		}
+		.decimal:hover:not(.active){
+			background-color: grey;
+			color:black;
+		}
+	</style>
+	<script>
+		function c(val){
+			document.getElementById("d").value=val;
+		}
+		function v(val){
+			document.getElementById("d").value+=val;
+		}
+
+		function e(){
+			try{
+			c(eval(document.getElementById("d").value));
+		}
+		catch(e){
+			c('Error')
+		}
+		}
+	</script>
+</head>
+<body>
+	<div class="box">
+		<div class="display"><input type="text" id="d"readonly size="10">
+		</div>
+		<div class="keys">
+			<p>
+			<input type="button" class="clear"value="C" onclick='c(" ")'>
+			<input type="button" class="operator" value="/" onclick='v("/")'>
+			<input type="button" class="operator" value="*" onclick='v("*")'>
+			<input type="button" class="operator" value="+" onclick='v("+")'>
+			<input type="button" class="operator" value="-" onclick='v("-")'></p><p>
+			<input type="button" class="number" value="7" onclick='v("7")'>
+			<input type="button" class="number" value="8" onclick='v("8")'>
+			<input type="button" class="number" value="9" onclick='v("9")'>
+			<input type="button" class="decimal" value="." onclick='v(".")'></p><p>
+			<input type="button" class="number" value="6" onclick='v("6")'>
+			<input type="button" class="number" value="5" onclick='v("5")'>
+			<input type="button" class="number" value="4" onclick='v("4")'>
+			<input type="button" class="decimal" value="=" onclick='e("=")'></p><p>
+			<input type="button" class="number" value="3" onclick='v("3")'>
+			<input type="button" class="number" value="2" onclick='v("2")'>
+			<input type="button" class="number" value="1" onclick='v("1")'>
+			<input type="button" class="number" value="0" onclick='v("0")'>
+		</div>
+	</p>
+</div>
+</body>
+</html>
